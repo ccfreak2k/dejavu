@@ -2,7 +2,7 @@ from __future__ import absolute_import
 import abc
 
 
-class Database(object):
+class Database():
     __metaclass__ = abc.ABCMeta
 
     FIELD_FILE_SHA1 = 'file_sha1'
@@ -104,7 +104,7 @@ class Database(object):
         pass
 
     @abc.abstractmethod
-    def insert_song(self, song_name):
+    def insert_song(self, song_name, file_hash):
         """
         Inserts a song name into the database, returns the new
         identifier of the song.
@@ -173,4 +173,17 @@ def get_database(database_type=None):
 
 
 # Import our default database handler
-import dejavu.database_sql
+try:
+    import dejavu.database_sql
+except ImportError:
+    print("MySQL backend unavailable")
+
+try:
+    import dejavu.database_sqla
+except ImportError:
+    print("SQLAlchemy ORM backend unavailable")
+
+try:
+    import dejavu.database_sqlac
+except ImportError:
+    print("SQLAlchemy Core backend unavailable")

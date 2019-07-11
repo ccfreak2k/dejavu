@@ -9,6 +9,7 @@ So far Dejavu has only been tested on Unix systems.
 * [`scipy`](http://www.scipy.org/), used in peak finding algorithms
 * [`matplotlib`](http://matplotlib.org/), used for spectrograms and plotting
 * [`MySQLdb`](http://mysql-python.sourceforge.net/MySQLdb.html) for interfacing with MySQL databases
+* [`SQLAlchemy`](https://www.sqlalchemy.org/) for interfacing with MySQL, PostgreSQL, SQLite, and more.
 
 For installing `ffmpeg` on Mac OS X, I highly recommend [this post](http://jungels.net/articles/ffmpeg-howto.html).
 
